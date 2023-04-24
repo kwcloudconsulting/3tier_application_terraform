@@ -66,7 +66,7 @@ resource "aws_route_table_association" "private_app_subnet_az1_route_table_az1_a
 # associate private data subnet az1 with private route table az1
 resource "aws_route_table_association" "private_data_subnet_az1_route_table_az1_association" {
   subnet_id         = var.private_data_subnet_az1_id
-  route_table_id    = aws_eip.eip_for_nat_gateway_az1.id
+  route_table_id    = aws_route_table.private_route_table_az1.id
 }
 
 # create private route table az2 and add route through nat gateway az2

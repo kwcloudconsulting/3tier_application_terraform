@@ -46,17 +46,17 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
       
       ulimits = [
         {
-          name = "nofile",
-          softLimit = 1024000,
+          name = "nofile"
+          softLimit = 1024000
           hardLimit = 1024000
         }
       ]
 
       logConfiguration = {
-        logDriver   = "awslogs",
+        logDriver   = "awslogs"
         options     = {
-          "awslogs-group"          = aws_cloudwatch_log_group.log_group.name,
-           "awslogs-region"        = var.region,
+          "awslogs-group"          = aws_cloudwatch_log_group.log_group.name
+          "awslogs-region"        = var.region
           "awslogs-stream-prefix"  = "ecs"
         }
       }
